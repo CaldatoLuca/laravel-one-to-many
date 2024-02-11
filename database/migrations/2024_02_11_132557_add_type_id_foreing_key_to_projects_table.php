@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::table('projects', function (Blueprint $table) {
             $table->unsignedBigInteger('type_id')->nullable()->after('id');
 
-            //tramite type_id mi riferisco all' id della tabella types
-            $table->foreign('type_id')->references('id')->on('types');
+            //tramite type_id mi riferisco all' id della tabella types e al cancellare di un type lo rendo null nei project associati
+            $table->foreign('type_id')->references('id')->on('types')->nullOnDelete();
 
             //stessa cosa ma abbraviata
             // $table->foreignId('type_id')->constrained();

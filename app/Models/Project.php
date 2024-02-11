@@ -10,4 +10,11 @@ class Project extends Model
     use HasFactory;
 
     protected $guarded = ['slug', 'thumb'];
+
+    //singolare perchè ha solo un type
+    public function type()
+    {
+        //ha solo un type
+        return $this->belongsTo(Type::class);
+    }
 }

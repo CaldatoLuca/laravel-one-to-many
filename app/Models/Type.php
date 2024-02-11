@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Type extends Model
 {
     use HasFactory;
+
+    //nome plurale perchè ha piu projects
+    public function projects()
+    {
+        // ha tanti projects
+        return $this->hasMany(Project::class);
+    }
 }

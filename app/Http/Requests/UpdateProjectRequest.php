@@ -25,6 +25,7 @@ class UpdateProjectRequest extends FormRequest
             'title' => 'required|string|max:50',
             'description' => 'nullable|string|max:1000',
             'thumb' => 'nullable|image|max:2048', //2mega
+            'type_id' => 'nullable|exists:types,id' //esiste nella tabella types, colonna id?
         ];
     }
 }

@@ -88,6 +88,8 @@ class ProjectController extends Controller
             $project->thumb = Storage::put('uploads', $data['thumb']);
         }
 
+
+
         //aggiorna tutto tranne slug, ci ho pensato io
         $project->update($data);
 

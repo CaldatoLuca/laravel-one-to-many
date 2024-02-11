@@ -77,9 +77,9 @@
                                         type="file" id="project-img-edit" name="thumb"
                                         value="{{ old('thumb', $project->thumb) }}">
                                     {{-- remove image --}}
-                                    <button class="btn btn-form remove-image" type="button" id="button-addon2">
+                                    {{-- <button class="btn btn-form remove-image" type="button" id="button-addon2">
                                         <i class="fa-solid fa-trash"></i>
-                                    </button>
+                                    </button> --}}
                                 </div>
                             </div>
 

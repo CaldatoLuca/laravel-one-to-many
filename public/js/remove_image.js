@@ -10,5 +10,5 @@ removeImage.addEventListener("click", function () {
         "bg-danger",
         "rounded-2"
     );
-    imageElement.value = "";
+    imageElement.value = null;
 });

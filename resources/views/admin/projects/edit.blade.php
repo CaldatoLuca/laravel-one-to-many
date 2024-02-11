@@ -57,6 +57,26 @@
                                 </div>
                             </div>
 
+                            {{-- types --}}
+                            <div class="mb-3">
+                                <label for="project-type" class="form-label d-flex justify-content-between ">
+                                    Select Type
+                                    {{-- errore descrizione --}}
+                                    @error('type_id')
+                                        <div class="text-danger">{{ $message }}</div>
+                                    @enderror
+                                </label>
+                                {{-- input --}}
+                                <select class="my-input form-select @error('type_id') is-invalid @enderror"
+                                    aria-label="Default select example" name="type_id">
+                                    <option selected>No Type Selected</option>
+                                    @foreach ($types as $type)
+                                        <option value="{{ $type->id }}"
+                                            @if (old('type_id', $project->type_id) == $type->id) selected @endif>{{ $type->title }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+
                             {{-- bottone di invio --}}
                             <button type="submit" class="btn btn-form">Submit</button>
                         </div>

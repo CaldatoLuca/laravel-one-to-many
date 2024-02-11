@@ -17,6 +17,12 @@
                     <h3>Description:</h3>
                     <div class="mb-3">{{ $project->description }}</div>
                 </div>
+
+                {{-- type --}}
+                <div class="type">
+                    <h3>Type:</h3>
+                    <div class="mb-3">{{ $project->type?->title }}</div>
+                </div>
             </div>
 
             {{-- immagine --}}

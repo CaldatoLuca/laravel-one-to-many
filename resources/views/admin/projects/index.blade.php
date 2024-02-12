@@ -14,8 +14,8 @@
                     <th scope="col">ID</th>
                     <th scope="col">Title</th>
                     <th scope="col">Slug</th>
+                    <th scope="col">Type</th>
                     <th scope="col" class="text-center">Thumb</th>
-                    <th scope="col" class="text-center">Description</th>
                     <th scope="col" class="text-center">View More</th>
                     <th scope="col" class="text-center">Edit</th>
                     <th scope="col" class="text-center">Delete</th>
@@ -33,18 +33,12 @@
                         {{-- slug --}}
                         <td>{{ $project->slug }}</td>
 
+                        {{-- type --}}
+                        <td>{{ $project->type->title }}</td>
+
                         {{-- ha immagine? --}}
                         <td class="text-center">
                             @if ($project->thumb)
-                                <i class="fa-regular fa-square-check"></i>
-                            @else
-                                <i class="fa-solid fa-square-xmark"></i>
-                            @endif
-                        </td>
-
-                        {{-- ha descrizione? --}}
-                        <td class="text-center">
-                            @if ($project->description)
                                 <i class="fa-regular fa-square-check"></i>
                             @else
                                 <i class="fa-solid fa-square-xmark"></i>

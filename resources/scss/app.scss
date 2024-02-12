@@ -6,6 +6,9 @@
 //Admin.blade
 #admin {
     background-color: $torquise;
+    .warning {
+        color: $black;
+    }
     #admin-header {
         background-color: $black;
         height: $header-height;
@@ -14,6 +17,10 @@
         #sidebar-menu {
             a {
                 color: $grey-light;
+            }
+            .subtitle {
+                color: $grey-light;
+                font-weight: bold;
             }
             .link-selected {
                 background-color: $black-light-transparent;
@@ -44,7 +51,8 @@
 }
 
 //Index.blade
-#index {
+#index,
+#index-type {
     th,
     td {
         background-color: $grey-light;
@@ -61,6 +69,7 @@
 //Index.create
 
 #create,
+#create_type,
 #edit {
     .image-show {
         width: 100%;

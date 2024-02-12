@@ -58,6 +58,12 @@
                     class="col-md-3 col-lg-2 d-md-block navbar-dark sidebar collapse position-fixed ">
                     <div class="position-sticky pt-3">
                         <ul class="nav flex-column">
+                            {{-- MAIN DASHBOARD --}}
+                            <li class="nav-item rounded-1 overflow-hidden">
+                                <div class="nav-link subtitle fw-b">
+                                    Dashboard
+                                </div>
+                            </li>
                             {{-- dashboard --}}
                             <li class="nav-item rounded-1 overflow-hidden">
                                 <a class="nav-link {{ Route::currentRouteName() == 'admin.dashboard' ? 'link-selected' : '' }}"
@@ -66,11 +72,17 @@
                                 </a>
                             </li>
 
+                            {{-- PROJECTS --}}
+                            <li class="nav-item rounded-1 overflow-hidden">
+                                <div class="nav-link subtitle fw-b">
+                                    Projects
+                                </div>
+                            </li>
                             {{-- project list --}}
                             <li class="nav-item rounded-1 overflow-hidden">
                                 <a class="nav-link {{ Route::currentRouteName() == 'admin.projects.index' ? 'link-selected' : '' }}"
                                     href="{{ route('admin.projects.index') }}">
-                                    <i class="fa-solid fa-folder fa-lg fa-fw"></i> Project List
+                                    <i class="fa-solid fa-folder fa-lg fa-fw"></i> Projects List
                                 </a>
                             </li>
 
@@ -79,6 +91,27 @@
                                 <a class="nav-link {{ Route::currentRouteName() == 'admin.projects.create' ? 'link-selected' : '' }}"
                                     href="{{ route('admin.projects.create') }}">
                                     <i class="fa-solid fa-plus fa-lg fa-fw"></i> New Project
+                                </a>
+                            </li>
+
+                            {{-- TYPES --}}
+                            <li class="nav-item rounded-1 overflow-hidden">
+                                <div class="nav-link subtitle fw-b">
+                                    Types
+                                </div>
+                            </li>
+                            {{-- types list --}}
+                            <li class="nav-item rounded-1 overflow-hidden">
+                                <a class="nav-link {{ Route::currentRouteName() == 'admin.types.index' ? 'link-selected' : '' }}"
+                                    href="{{ route('admin.types.index') }}">
+                                    <i class="fa-solid fa-folder fa-lg fa-fw"></i> Types List
+                                </a>
+                            </li>
+                            {{-- create type --}}
+                            <li class="nav-item rounded-1 overflow-hidden">
+                                <a class="nav-link {{ Route::currentRouteName() == 'admin.types.create' ? 'link-selected' : '' }}"
+                                    href="{{ route('admin.types.create') }}">
+                                    <i class="fa-solid fa-plus fa-lg fa-fw"></i> New Type
                                 </a>
                             </li>
                         </ul>
@@ -146,6 +179,7 @@
         </button>
     </div>
 
+    {{-- importo js in base alla pagina --}}
     @if (Route::currentRouteName() == 'admin.projects.create')
         <script src="{{ asset('js/image_preview.js') }}"></script>
     @endif

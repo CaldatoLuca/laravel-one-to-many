@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('projects', function (Blueprint $table) {
-            $table->unsignedBigInteger('type_id')->nullable()->after('id');
+            $table->unsignedBigInteger('type_id')->after('id');
 
             //tramite type_id mi riferisco all' id della tabella types e al cancellare di un type lo rendo null nei project associati
             $table->foreign('type_id')->references('id')->on('types')->nullOnDelete();
